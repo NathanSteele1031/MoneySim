@@ -1,4 +1,4 @@
-import pygame, random
+import pygame, random, json
 
 class Person():
     def __init__(self, x, y):
@@ -6,7 +6,12 @@ class Person():
         self.y = y
         self.money = 0
         self.assets = []
-        self.needs = []
+        self.needs = self.random_needs()
+    
+    def random_needs(self):
+        with open("GameData/needs.json", "r") as f:
+            needs = json.load(f)
+        self.needs = random.choice(needs["item_properities"])
     
     def random_move(self):
         self.x += random.randint(-1, 1) * 10
