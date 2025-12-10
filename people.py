@@ -6,6 +6,7 @@ class Person():
         self.y = y
         self.money = 0
         self.assets = []
+        self.needs = []
     
     def random_move(self):
         self.x += random.randint(-1, 1) * 10
