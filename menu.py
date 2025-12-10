@@ -11,6 +11,8 @@ class PersonPanel:
         """
         Call draw before calling this method so it looks right
         """
+        if person is None:
+            return
         font = pygame.font.Font(None, 20)
         text = font.render(f"X: {person.x}, Y: {person.y}", True, (255, 255, 255))
         screen.blit(text, (self.x + 10, self.y + 10))
