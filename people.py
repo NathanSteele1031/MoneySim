@@ -4,6 +4,7 @@ class Person():
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        self.money = 0
     
     def random_move(self):
         self.x += random.randint(-1, 1) * 10
