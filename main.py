@@ -1,13 +1,16 @@
 import pygame, random
-import map, people
+import map, people, menu
 
 def main():
     pygame.init()
-    display = pygame.display.set_mode((640, 480))
+    display = pygame.display.set_mode((840, 480))
     clock = pygame.time.Clock()
-    time_paused = False
 
+    person_info_panel = menu.PersonPanel(640, 0, 840, 480)
+    person_selected = None
+    time_paused = False
     world_map = map.Map(640, 480)
+    world_map.objects.append(people.Person(245, 245))
 
     running = True
     while running:
@@ -22,6 +25,8 @@ def main():
                     time_paused = not time_paused
         
         display.fill((0, 255, 0))
+        person_info_panel.draw(display)
+        person_info_panel.display_person_info(display, person_selected)
         world_map.show_lines(display)
         for obj in world_map.objects:
             obj.draw(display)
