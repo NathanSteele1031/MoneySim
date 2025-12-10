@@ -11,7 +11,7 @@ class Person():
     def random_needs(self):
         with open("GameData/needs.json", "r") as f:
             needs = json.load(f)
-        self.needs = random.choice(needs["item_properities"])
+        return random.choice(needs["item_properities"])
     
     def random_move(self):
         self.x += random.randint(-1, 1) * 10
