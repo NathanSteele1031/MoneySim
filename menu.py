@@ -30,7 +30,7 @@ class ItemPanel:
         self.width = width
         self.height = height
     
-    def display_item_info(self, screen, item: items.Item):
+    def display_item_info(self, screen, item):
         if item is None:
             return
         font = pygame.font.Font(None, 20)
@@ -42,3 +42,6 @@ class ItemPanel:
         screen.blit(text, (self.x + 10, self.y + 40))
         text = font.render(f"X: {item.x}, Y: {item.y}", True, (255, 255, 255))
         screen.blit(text, (self.x + 10, self.y + 55))
+    
+    def draw(self, screen):
+        pygame.draw.rect(screen, (0, 0, 0), (self.x, self.y, self.width, self.height))
