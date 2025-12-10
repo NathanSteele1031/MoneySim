@@ -1,5 +1,5 @@
 import pygame, random
-import map, people, menu
+import map, people, menu, items
 
 def main():
     pygame.init()
@@ -10,7 +10,6 @@ def main():
     person_selected = None
     time_paused = False
     world_map = map.Map(640, 480)
-    world_map.objects.append(people.Person(245, 245))
 
     running = True
     while running:
@@ -21,6 +20,9 @@ def main():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_p:
                     world_map.objects.append(people.Person(245, 245))
+                if event.key == pygame.K_i:
+                    world_map.objects.append(items.Item())
+                    world_map.objects[-1].set_cord(245, 245)
                 if event.key == pygame.K_SPACE:
                     time_paused = not time_paused
         
@@ -38,7 +40,7 @@ def main():
         world_map.show_lines(display)
         for obj in world_map.objects:
             obj.draw(display)
-            if random.randint(0, 50) == 0 and not time_paused:
+            if random.randint(0, 50) == 0 and not time_paused and type(obj) == people.Person:
                 obj.random_move()
 
         pygame.display.flip()
