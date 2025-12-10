@@ -24,6 +24,14 @@ def main():
                 if event.key == pygame.K_SPACE:
                     time_paused = not time_paused
         
+        mouse_pos = pygame.mouse.get_pos()
+        person_selected = None
+        for obj in world_map.objects:
+            if type(obj) == people.Person:
+                if mouse_pos[0] > obj.x - 5 and mouse_pos[0] < obj.x + 5 and mouse_pos[1] > obj.y - 5 and mouse_pos[1] < obj.y + 5:
+                    person_selected = obj
+                
+        
         display.fill((0, 255, 0))
         person_info_panel.draw(display)
         person_info_panel.display_person_info(display, person_selected)
