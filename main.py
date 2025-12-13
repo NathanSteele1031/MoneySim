@@ -35,7 +35,7 @@ def main():
             if type(obj) == people.Person:
                 if mouse_pos[0] > obj.x - 5 and mouse_pos[0] < obj.x + 5 and mouse_pos[1] > obj.y - 5 and mouse_pos[1] < obj.y + 5:
                     person_selected = obj
-            if type(obj) == items.Item:
+            if issubclass(type(obj), items.Item) or obj == items.Item:
                 if mouse_pos[0] > obj.x - 5 and mouse_pos[0] < obj.x + 5 and mouse_pos[1] > obj.y - 5 and mouse_pos[1] < obj.y + 5:
                     item_selected = obj
         
