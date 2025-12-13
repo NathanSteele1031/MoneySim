@@ -25,28 +25,7 @@ class Item:
 class Weapon(Item):
     def __init__(self):
         super().__init__()
-        self.description += "Weapon "
     
 class Jewelry(Item):
     def __init__(self):
         super().__init__()
-        self.need_satisfied.append("shiney")
-        self.description += "Jewelry "
-
-class Braslet(Jewelry):
-    def __init__(self):
-        super().__init__()
-        self.need_satisfied.append("round")
-        self.description += "Braslet "
-
-class Sword(Weapon):
-    def __init__(self):
-        super().__init__()
-        self.need_satisfied.append("sharp")
-        self.description += "Sword "
-
-class Club(Weapon):
-    def __init__(self):
-        super().__init__()
-        self.need_satisfied.append("blunt")
-        self.description += "Club "
