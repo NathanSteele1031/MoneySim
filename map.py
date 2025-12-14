@@ -25,7 +25,7 @@ class TerminalMap:
     def draw(self, screen: curses.window):
         for x in range(0, self.charwidth):
             for y in range(0, self.charheight):
-                screen.addch(y, x, "Y")
+                screen.addch(y, x, "_")
         for item in self.objects:
             item.draw_terminal(screen)
     
