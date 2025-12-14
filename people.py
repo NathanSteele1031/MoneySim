@@ -26,5 +26,4 @@ class Person():
         pygame.draw.circle(screen, (0, 0, 0), (self.x, self.y), 5)
     
     def draw_terminal(self, screen):
-        curses.init_pair(1, curses.COLOR_YELLOW, curses.COLOR_BLACK)
         screen.addch(self.y, self.x, "P", curses.color_pair(1))
