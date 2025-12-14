@@ -1,4 +1,4 @@
-import pygame, random, curses
+import pygame, random, curses, time
 import map, people, menu, items
 
 terminal_view = True
@@ -58,7 +58,16 @@ def main_window():
     pygame.quit()
 
 def main_terminal():
-    pass
+    x = 0
+    stdscr = curses.initscr()
+    curses.curs_set(0)
+    while True:
+
+        # Add to terminal here
+
+        stdscr.refresh()
+        time.sleep(0.1)
+        stdscr.clear()
 
 if __name__ == "__main__":
     if terminal_view:
