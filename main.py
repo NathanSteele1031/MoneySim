@@ -1,4 +1,4 @@
-import pygame, random, cursor
+import pygame, random
 import map, people, menu, items
 
 terminal_view = True
