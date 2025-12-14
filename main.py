@@ -58,7 +58,6 @@ def main_window():
     pygame.quit()
 
 def main_terminal():
-    x = 0
     stdscr = curses.initscr()
     curses.curs_set(0)
     while True:
