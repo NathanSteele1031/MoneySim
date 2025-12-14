@@ -1,11 +1,12 @@
 import pygame, random, json
+import inventory
 
 class Person():
     def __init__(self, x, y):
         self.x = x
         self.y = y
         self.money = 0
-        self.assets = []
+        self.inventory = inventory.Inventory()
         self.needs = self.random_needs()
     
     def random_needs(self):
