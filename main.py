@@ -58,11 +58,14 @@ def main_window():
     pygame.quit()
 
 def main_terminal():
+    world_map = map.TerminalMap(119, 30)
+
     stdscr = curses.initscr()
     curses.curs_set(0)
     while True:
 
         # Add to terminal here
+        world_map.draw(stdscr)
 
         stdscr.refresh()
         time.sleep(0.1)
