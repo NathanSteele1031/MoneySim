@@ -61,6 +61,7 @@ def main_terminal():
     world_map = map.TerminalMap(119, 30)
 
     stdscr = curses.initscr()
+    curses.start_color()
     curses.curs_set(0)
     while True:
 
