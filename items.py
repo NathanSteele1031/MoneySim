@@ -1,4 +1,4 @@
-import pygame, json
+import pygame, json, curses
 
 def load_json_items(path):
     try:
@@ -28,6 +28,9 @@ class Item:
     
     def draw(self, screen: pygame.Surface):
         pygame.draw.circle(screen, (255, 0, 0), (self.x, self.y), 5)
+    
+    def draw_terminal(self, screen: curses.window):
+        screen.addch(self.y, self.x, "I", curses.color_pair(2))
 
 class Weapon(Item):
     def __init__(self, name, description="", demand=0, need_satisfied=[], x=0, y=0):

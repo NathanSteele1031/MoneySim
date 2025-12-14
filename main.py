@@ -1,7 +1,9 @@
-import pygame, random
+import pygame, random, curses, time
 import map, people, menu, items
 
-def main():
+terminal_view = True
+
+def main_window():
     pygame.init()
     display = pygame.display.set_mode((840, 480))
     clock = pygame.time.Clock()
@@ -55,5 +57,25 @@ def main():
 
     pygame.quit()
 
+def main_terminal():
+    world_map = map.TerminalMap(119, 30)
+
+    stdscr = curses.initscr()
+    curses.start_color()
+    curses.init_pair(1, curses.COLOR_YELLOW, curses.COLOR_BLACK) # people
+    curses.init_pair(2, curses.COLOR_RED, curses.COLOR_BLACK) # items
+    curses.curs_set(0)
+    while True:
+
+        # Add to terminal here
+        world_map.draw(stdscr)
+
+        stdscr.refresh()
+        time.sleep(0.1)
+        stdscr.clear()
+
 if __name__ == "__main__":
-    main()
+    if terminal_view:
+        main_terminal()
+    else:
+        main_window()
