@@ -1,4 +1,4 @@
-import pygame, json
+import pygame, json, curses
 
 def load_json_items(path):
     try:
