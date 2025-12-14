@@ -26,6 +26,8 @@ class TerminalMap:
         for x in range(0, self.charwidth):
             for y in range(0, self.charheight):
                 screen.addch(y, x, "Y")
+        for item in self.objects:
+            item.draw_terminal(screen)
     
     def add_object(self, object_value):
         self.objects.append(object_value)
