@@ -1,0 +1,9 @@
+{
+    "Sword": {
+        "description": "A sharp sword",
+        "type": "weapon",
+        "properties": [
+            "sharp"
+        ]
+    }
+}
