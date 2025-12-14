@@ -58,6 +58,8 @@ def main_window():
     pygame.quit()
 
 def main_terminal():
+    curses.init_pair(1, curses.COLOR_YELLOW, curses.COLOR_BLACK) # people
+    curses.init_pair(2, curses.COLOR_RED, curses.COLOR_BLACK) # items
     world_map = map.TerminalMap(119, 30)
 
     stdscr = curses.initscr()
