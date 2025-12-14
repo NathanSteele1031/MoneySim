@@ -23,7 +23,7 @@ def main():
                 if event.key == pygame.K_p:
                     world_map.objects.append(people.Person(245, 245))
                 if event.key == pygame.K_i:
-                    world_map.objects.append(items.Item())
+                    world_map.objects.append(items.Item("Test"))
                     world_map.objects[-1].set_cord(245, 245)
                 if event.key == pygame.K_SPACE:
                     time_paused = not time_paused
