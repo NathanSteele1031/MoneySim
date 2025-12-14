@@ -1,7 +1,9 @@
 import pygame, random
 import map, people, menu, items
 
-def main():
+terminal_view = True
+
+def main_window():
     pygame.init()
     display = pygame.display.set_mode((840, 480))
     clock = pygame.time.Clock()
@@ -55,5 +57,11 @@ def main():
 
     pygame.quit()
 
+def main_terminal():
+    pass
+
 if __name__ == "__main__":
-    main()
+    if terminal_view:
+        main_terminal()
+    else:
+        main_window()
